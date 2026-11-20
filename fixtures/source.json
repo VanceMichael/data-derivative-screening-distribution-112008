@@ -1,0 +1,290 @@
+{
+  "steps": [
+    "booking",
+    "restrict",
+    "late",
+    "restore"
+  ],
+  "routes": {
+    "common": {
+      "GET /catalog": {
+        "status": 200,
+        "body": "<!doctype html><html lang=\"zh-CN\"><meta charset=\"utf-8\"><title>馆方短片编目</title><main><h1>馆方短片编目</h1><article data-edition=\"cut1\"><h2>北坡剪影第一版</h2><span data-track=\"picture\" data-part=\"derivative\" data-in=\"1\" data-out=\"13\">剪辑画面</span><span data-track=\"sound\" data-part=\"oral\" data-in=\"12\" data-out=\"20\">口述录音</span></article><article data-edition=\"cut2\"><h2>北坡剪影巡展版</h2><span data-track=\"picture\" data-part=\"archive\" data-in=\"7\" data-out=\"13\">馆方画面</span><span data-track=\"sound\" data-part=\"oral\" data-in=\"12\" data-out=\"20\">口述录音</span></article></main></html>",
+        "type": "text/html; charset=utf-8"
+      },
+      "GET /catalog/links": {
+        "status": 200,
+        "body": [
+          {
+            "derived": "derivative",
+            "from": 0,
+            "to": 8,
+            "source": "archive",
+            "at": 6
+          },
+          {
+            "derived": "derivative",
+            "from": 8,
+            "to": 14,
+            "source": "photo",
+            "at": 0
+          }
+        ]
+      },
+      "GET /exhibits/schedule": {
+        "status": 200,
+        "body": [
+          {
+            "screen": "P1",
+            "slot": "feature",
+            "venue": "hall",
+            "use": "on-site",
+            "edition": "cut1",
+            "from": "2026-12-05T09:00:00+08:00",
+            "to": "2026-12-05T18:00:00+08:00"
+          },
+          {
+            "screen": "P2",
+            "slot": "feature",
+            "venue": "web",
+            "use": "public-web",
+            "edition": "cut1",
+            "alternative": "cut2",
+            "from": "2026-12-05T09:00:00+08:00",
+            "to": "2026-12-05T18:00:00+08:00"
+          }
+        ]
+      },
+      "GET /rights/entries": {
+        "status": 200,
+        "body": [
+          {
+            "id": "hall0",
+            "owner": "R-archive",
+            "item": "archive",
+            "track": "picture",
+            "start": 7,
+            "end": 10,
+            "venue": "hall",
+            "use": "on-site",
+            "validFrom": "2026-12-01T00:00:00Z",
+            "validUntil": "2026-12-07T00:00:00Z"
+          },
+          {
+            "id": "hall1",
+            "owner": "R-archive",
+            "item": "archive",
+            "track": "picture",
+            "start": 10,
+            "end": 14,
+            "venue": "hall",
+            "use": "on-site",
+            "validFrom": "2026-12-01T00:00:00Z",
+            "validUntil": "2026-12-07T00:00:00Z"
+          },
+          {
+            "id": "hall2",
+            "owner": "R-photo",
+            "item": "photo",
+            "track": "picture",
+            "start": 0,
+            "end": 5,
+            "venue": "hall",
+            "use": "on-site",
+            "validFrom": "2026-12-01T00:00:00Z",
+            "validUntil": "2026-12-07T00:00:00Z"
+          },
+          {
+            "id": "hall3",
+            "owner": "R-oral",
+            "item": "oral",
+            "track": "sound",
+            "start": 12,
+            "end": 20,
+            "venue": "hall",
+            "use": "on-site",
+            "validFrom": "2026-12-01T00:00:00Z",
+            "validUntil": "2026-12-07T00:00:00Z"
+          },
+          {
+            "id": "web0",
+            "owner": "R-archive",
+            "item": "archive",
+            "track": "picture",
+            "start": 7,
+            "end": 10,
+            "venue": "web",
+            "use": "public-web",
+            "validFrom": "2026-12-01T00:00:00Z",
+            "validUntil": "2026-12-07T00:00:00Z"
+          },
+          {
+            "id": "web1",
+            "owner": "R-archive",
+            "item": "archive",
+            "track": "picture",
+            "start": 10,
+            "end": 14,
+            "venue": "web",
+            "use": "public-web",
+            "validFrom": "2026-12-01T00:00:00Z",
+            "validUntil": "2026-12-07T00:00:00Z"
+          },
+          {
+            "id": "web2",
+            "owner": "R-photo",
+            "item": "photo",
+            "track": "picture",
+            "start": 0,
+            "end": 5,
+            "venue": "web",
+            "use": "public-web",
+            "validFrom": "2026-12-01T00:00:00Z",
+            "validUntil": "2026-12-07T00:00:00Z"
+          },
+          {
+            "id": "web3",
+            "owner": "R-oral",
+            "item": "oral",
+            "track": "sound",
+            "start": 12,
+            "end": 20,
+            "venue": "web",
+            "use": "public-web",
+            "validFrom": "2026-12-01T00:00:00Z",
+            "validUntil": "2026-12-07T00:00:00Z"
+          }
+        ]
+      },
+      "GET /rights/amendments": {
+        "status": 200,
+        "body": []
+      },
+      "POST /player/commands": {
+        "status": 202,
+        "body": {
+          "state": "arrived"
+        }
+      },
+      "GET /player/receipts": {
+        "status": 200,
+        "body": [
+          {
+            "screen": "P1",
+            "slot": "feature",
+            "sequence": 1,
+            "action": "on",
+            "state": "applied"
+          }
+        ]
+      }
+    },
+    "booking": {},
+    "restrict": {
+      "GET /rights/amendments": {
+        "status": 200,
+        "body": [
+          {
+            "right": "web2",
+            "effective": "2026-12-05T10:00:00+08:00",
+            "action": "withdraw"
+          },
+          {
+            "right": "web0",
+            "effective": "2026-12-05T10:00:00+08:00",
+            "action": "restrict",
+            "venue": "hall"
+          }
+        ]
+      },
+      "GET /player/receipts": {
+        "status": 200,
+        "body": [
+          {
+            "screen": "P2",
+            "slot": "feature",
+            "sequence": 2,
+            "action": "off",
+            "state": "offline"
+          }
+        ]
+      }
+    },
+    "late": {
+      "GET /rights/amendments": {
+        "status": 200,
+        "body": [
+          {
+            "right": "web2",
+            "effective": "2026-12-05T10:00:00+08:00",
+            "action": "withdraw"
+          },
+          {
+            "right": "web0",
+            "effective": "2026-12-05T10:00:00+08:00",
+            "action": "restrict",
+            "venue": "hall"
+          }
+        ]
+      },
+      "GET /player/receipts": {
+        "status": 200,
+        "body": [
+          {
+            "screen": "P2",
+            "slot": "feature",
+            "sequence": 1,
+            "action": "on",
+            "state": "applied",
+            "at": "2026-12-05T09:35:00+08:00"
+          },
+          {
+            "screen": "P2",
+            "slot": "feature",
+            "sequence": 2,
+            "action": "off",
+            "state": "applied",
+            "at": "2026-12-05T11:15:00+08:00"
+          }
+        ]
+      }
+    },
+    "restore": {
+      "GET /rights/amendments": {
+        "status": 200,
+        "body": [
+          {
+            "right": "web2",
+            "effective": "2026-12-05T10:00:00+08:00",
+            "action": "withdraw"
+          },
+          {
+            "right": "web0",
+            "effective": "2026-12-05T10:00:00+08:00",
+            "action": "restrict",
+            "venue": "hall"
+          },
+          {
+            "right": "web0",
+            "effective": "2026-12-05T14:00:00+08:00",
+            "action": "restore"
+          }
+        ]
+      },
+      "GET /player/receipts": {
+        "status": 200,
+        "body": [
+          {
+            "screen": "P2",
+            "slot": "feature",
+            "sequence": 3,
+            "action": "on",
+            "edition": "cut2",
+            "state": "applied",
+            "at": "2026-12-05T14:01:00+08:00"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,38 @@
+[
+  {
+    "step": "booking",
+    "path": "/rights/entries",
+    "field": [
+      6,
+      "venue"
+    ],
+    "value": "web"
+  },
+  {
+    "step": "restrict",
+    "path": "/rights/amendments",
+    "field": [
+      0,
+      "right"
+    ],
+    "value": "web2"
+  },
+  {
+    "step": "late",
+    "path": "/player/receipts",
+    "field": [
+      1,
+      "sequence"
+    ],
+    "value": 2
+  },
+  {
+    "step": "restore",
+    "path": "/player/receipts",
+    "field": [
+      0,
+      "edition"
+    ],
+    "value": "cut2"
+  }
+]
