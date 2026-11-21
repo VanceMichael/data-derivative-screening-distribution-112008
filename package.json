@@ -8,6 +8,8 @@
   },
   "scripts": {
     "start": "node sources/source.mjs",
+    "curator": "node src/server.mjs",
+    "demo": "node scripts/demo.mjs",
     "test": "node --test"
   }
 }
